@@ -1,0 +1,20 @@
+<h1>New Recipe</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'recipes:new' recipe.id %}" method="post">
+{% csrf_token %}
+  Name: <input type='text' name='name' /><br>
+  Prep Time: <input type='text' name='prep_time' /><br>
+  Serving Size: <input type='text' name='serving_size' /><br>
+  Ingredients: <br>
+    <input type='text' name='ingredient' /> &nbsp; <input type='text' name='measure' />
+    <input type='text' name='ingredient' /> &nbsp; <input type='text' name='measure' />
+    <input type='text' name='ingredient' /> &nbsp; <input type='text' name='measure' />
+    <input type='button' name='+ Ingredient' />
+    # If press button add another ingredient line
+      <input type='text' name='ingredient' /> &nbsp; <input type='text' name='measure' />
+  Directions:<br>
+  <textarea name='directions' />
+  <input type="submit" value="Save" />
+</form>

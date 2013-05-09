@@ -1,0 +1,15 @@
+<h1>{{ Recipe.name }}</h1>
+
+<p>
+
+<h2>Ingredients:</h2> <br>
+<ul>
+  {% for item in ingredient %}
+  <li> {{ item }} </li>
+  {% endfor %}
+</ul>
+
+<p>
+
+<h2>Directions:</h2> <br>
+{{ directions }}
